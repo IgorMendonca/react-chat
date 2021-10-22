@@ -31,11 +31,10 @@ const Chat = (props: ChatProps) => {
 
   useEffect(() => {
     props.socket.on('receive-message', (data) => {
-      if(String(data.room) === String(props.roomId)) {
-        setMessageList((list) => [...list, data])
-      }
+      setMessageList((list) => [...list, data])
+      
     })
-
+    
     return () => {
 
     }
